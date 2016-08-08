@@ -1,0 +1,32 @@
+/* Again Only use if you have webpack configured correctly */
+@import './reset';
+
+.react-accordion {
+  .accordion-content {
+    height:0;
+    overflow: hidden;
+    transition: height .25s ease;
+    font-family: sans-serif;
+
+    padding:0;
+    background:#bdc3c7;
+
+    .inner-content {
+      padding:5px;
+    }
+  }
+
+  .accordion-trigger {
+    background:#ecf0f1;
+    padding:5px;
+    font-family: sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    cursor: pointer;
+    transition: background .25s ease;
+
+    &.active {
+      background: darken(#ecf0f1, 10%);
+    }
+  }
+}
