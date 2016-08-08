@@ -5,7 +5,6 @@ Need an accordion for your Redux project? Look no further. You can have a single
 Redux Accordion is a fully featured accordion component, built using [react/redux](https://github.com/reactjs/redux/) with ECMAScript 6. Simple to set up, simple to use and most importantly hopefully as simple as possible to maintain and build upon.
 
 ## Installation
-Note: NPM package is in the works but for now you have to follow the following:<br/>
 * Clone / Download this repo. <br/>
 * Move /src/redux-accordion into your project. <br/>
 * Connect the actions and reducer into your app. <br/>
