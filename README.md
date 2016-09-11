@@ -1,22 +1,29 @@
 ![Redux Accordion Logo](/logo.png?raw=true)
 
 # Redux Accordion
-Need an accordion for your Redux project? Look no further. You can have a single or multiple instances running at one.
+Need an accordion for your React and/or Redux project? Look no further. You can have a single or multiple instances running at one.
 Redux Accordion is a fully featured accordion component, built using [react/redux](https://github.com/reactjs/redux/) with ECMAScript 6. Simple to set up, simple to use and most importantly hopefully as simple as possible to maintain and build upon.
 
-## Installation
+## Usage
+Redux accordion uses a redux store to manage its state, a maintainable way to handle your state objects. However if you would like to use the component version (or within a pure React build) you can use the redux-accordion-component version within the /src.
+
+
+## Installation for redux-accordion-component
+* Clone / Download this repo. <br/>
+* Move /src/redux-accordion into your project. <br/>
+* Include Accordion & AccordionSection
+* Done
+
+
+## Installation for redux-accordion
 * Clone / Download this repo. <br/>
 * Move /src/redux-accordion into your project. <br/>
 * Connect the actions and reducer into your app. <br/>
 * Add the main.css to your styles <br/>
 * Done. Accordions for everyone :) <br/>
+!important for redux-accordion: make sure you connect your actions and reducer!
 
-## Usage
-Redux accordion uses a redux store to manage its state, because it's a much more maintainable way to handle your state objects. (and its great)
-
-!important: make sure you connect your actions and reducer!
-
-## Setup: <br/>
+## How to setup: <br/>
 ### 1) Import or require /index.js (or just the folder) <br/>
 ### 2) Add an accordion section and pass the props.<br/>
 ```
@@ -28,7 +35,7 @@ Redux accordion uses a redux store to manage its state, because it's a much more
 
 </Accordion>
 ```
-* The uniqId specifies how this instance is referenced in the
+* The uniqId specifies how this instance is referenced in the reducer (non-component version)
 * You can set `singleOpen={true}` if you want to limit the accordion to only open a single section at a time
 * You can set `openByDefault={true}` if you want to accordion to be open by default <br/>
 
