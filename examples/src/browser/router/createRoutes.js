@@ -8,9 +8,8 @@ import App from '../app/App.react';
 import NotFound from '../notFound/Page.react';
 
 /* React accordion Test */
-import ReduxAccordion from '../components/redux-accordion/test/Page.react';
-
-
+// import ReduxAccordion from '../components/redux-accordion/test/Page.react';
+import ReduxAccordion from '../components/redux-accordion-component/Page.react';
 
 export default function createRoutes(getState) {
 
