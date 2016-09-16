@@ -1,4 +1,4 @@
-![Redux Accordion Logo](/logo.png?raw=true)
+![Redux Accordion Header Image](/readme-header.jpg?raw=true)
 
 # Redux Accordion
 Need an accordion for your React and/or Redux project? Look no further. You can have a single or multiple instances running at one.
