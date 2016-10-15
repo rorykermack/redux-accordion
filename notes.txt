@@ -1,0 +1,6 @@
+Build Process -> NPM
+  1) Uncomment compiled/ & src/ in .gitignore
+  1) npm run compile
+  2) npm publish
+
+To Test Build: $ npm pack & Install on local server (npm install /local/path/to/.tgz)
