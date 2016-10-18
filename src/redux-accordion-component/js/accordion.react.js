@@ -20,7 +20,8 @@ export default class Accordion extends React.Component {
   }
 
   componentWillMount() {
-    const {singleOpen, openByDefault, uniqId, actions: {accordionCreate}, children} = this.props;
+    const {singleOpen, openByDefault, uniqId, children} = this.props;
+    
     const settings = {singleOpen: singleOpen, openByDefault: openByDefault, uniqId: uniqId, kids: children};
     const initialState_sections = Utils.setupAccordion(settings).activeSections;
     this.setState({activeSections: initialState_sections});
