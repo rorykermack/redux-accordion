@@ -1,46 +1,58 @@
-![Redux Accordion Header Image](https://raw.githubusercontent.com/rorykermack/redux-accordion/master/readme-header.jpg?raw=true)
+![Redux Accordion Header Image](https://raw.githubusercontent.com/rorykermack/redux-accordion/master/readme-header.jpg)
 
 # Redux Accordion
 Need an accordion for your React and/or Redux project? Look no further. You can have a single or multiple instances running at one.
 Redux Accordion is a fully featured accordion component, built using [react/redux](https://github.com/reactjs/redux/) with ECMAScript 6. Simple to set up, simple to use and most importantly hopefully as simple as possible to maintain and build upon.
 
-## Usage
-Redux accordion uses a redux store to manage its state, a maintainable way to handle your state objects. However if you would like to use the component version (or within a pure React build) you can use the redux-accordion-component version within the /src.
+## Installation
+```
+npm install redux-accordion
 
+```
 
-## Installation for redux-accordion-component
-* Clone / Download this repo. <br/>
-* Move /src/redux-accordion into your project. <br/>
-* Include Accordion & AccordionSection
-* Done
-
-
-## Installation for redux-accordion
-* Clone / Download this repo. <br/>
-* Move /src/redux-accordion into your project. <br/>
-* Connect the actions and reducer into your app. <br/>
-* Add the main.css to your styles <br/>
-* Done. Accordions for everyone :) <br/>
-!important for redux-accordion: make sure you connect your actions and reducer!
-
-## How to setup: <br/>
-### 1) Import or require /index.js (or just the folder) <br/>
-### 2) Add an accordion section and pass the props.<br/>
+## Example
 ```
 <Accordion
   {...this.props}
   uniqId={'testAccordion'}>
 
+  <AccordionSection
+   title="Section 1">
+   {*/ Content Goes Here /*}
+  </AccordionSection>
+
+  <AccordionSection
+   title="Section 2">
+   {*/ Content Goes Here /*}
+  </AccordionSection>
+
+</Accordion>
+```
+
+
+## Usage
+Redux accordion uses a redux store to manage its state. However it also has the option to use local component state.
+
+With the local component state option you can simply run ```npm install redux-accordion```, include Accordion & AccordionSection and your good to go. The second requires you to hook up the actions and reducers to your app.
+
+
+## Sections:
+### Accordion
+```
+<Accordion
+  {...this.props}
+  uniqId={'testAccordion'}
+  singleOpen={true}>
+
   {*/ Content Goes Here /*}
 
 </Accordion>
 ```
-* The uniqId specifies how this instance is referenced in the reducer (non-component version)
+* You can set the uniqId if you want to apply an id to your accordion. This also specifies how this instance is referenced in the reducer (non-component version)
 * You can set `singleOpen={true}` if you want to limit the accordion to only open a single section at a time
-* You can set `openByDefault={true}` if you want to accordion to be open by default <br/>
+ <br/>
 
-### 3) Add your sections... <br/>
-
+### AccordionSection
 ```
 <AccordionSection
  title="Section 1">
@@ -50,8 +62,14 @@ Redux accordion uses a redux store to manage its state, a maintainable way to ha
 * The title dictates what is displayed on the accordion bar
 * You can set `openByDefault={true}` if you want this section to be open by default <br/>
 
-### 4) Add your content. <br/>
-### 5) Serve compiled and enjoy ;) <br/>
+
+
+## Installation with redux actions & stores
+* Clone git repo or run ```npm install redux-accordion``` <br/>
+* Connect the actions and reducer into your app (node_modules/redux-accordion/redux)<br/>
+* Include Accordion & AccordionSection.
+* Done. Accordions for everyone :) <br/>
+
 
 ## Contributing
 It doesn't matter if you're a veteran or not. Everyone brings something awesome to the party so please contribute.
