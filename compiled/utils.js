@@ -36,18 +36,20 @@ function toggleSection(sectionId, activeSections, singleOpen) {
 function setupAccordion(info) {
   var singleOpen = checkUndef(info.singleOpen) ? info.singleOpen : false;
   var activeSections = [];
+  var singleChild = typeof info.kids.length === 'undefined';
 
-  info.kids.forEach(function (child, i) {
-    var openByDefault = child.props.openByDefault;
+  if (!singleChild) {
+    info.kids.forEach(function (child, i) {
+      var openByDefault = child.props.openByDefault;
 
-    if (singleOpen && activeSections.length === 0 && openByDefault) {
-      activeSections.push('acc-sec-' + i);
-    }
-
-    if (!singleOpen && openByDefault) {
-      activeSections.push('acc-sec-' + i);
-    }
-  });
+      if (singleOpen && activeSections.length === 0 && openByDefault) {
+        activeSections.push('acc-sec-' + i);
+      }
+      if (!singleOpen && openByDefault) {
+        activeSections.push('acc-sec-' + i);
+      }
+    });
+  }
 
   return {
     activeSections: activeSections

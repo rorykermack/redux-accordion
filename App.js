@@ -159,6 +159,15 @@ export default class App extends React.Component {
              <p>item 4 (paragraph)</p>
           </AccordionSection>
         </Accordion>
+
+        <p className="sub-title">Single Item (note, singleOpen must be `false`)</p>
+        <Accordion singleOpen={false} className="test" uniqId={'testAccordion4'}>
+          <AccordionSection
+           title="Section 1"
+           openByDefault={false}>
+            Testing single section
+           </AccordionSection>
+         </Accordion>
       </section>
     );
   }

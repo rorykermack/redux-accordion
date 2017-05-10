@@ -1,10 +1,10 @@
 {
   "name": "redux-accordion",
-  "version": "1.0.71",
+  "version": "1.0.73",
   "description": "A reusable and customisable accordion component for react/redux",
-  "keywords": ["react", "redux", "accordion", "component"],
+  "keywords": [],
   "main": "index.js",
-  "url" : "https://github.com/rorykermack/redux-accordion",
+  "url": "https://github.com/rorykermack/redux-accordion",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --port 3000",
     "compile": "npm-run-all --parallel compile:source compile:postcss",
@@ -17,7 +17,6 @@
     "test:watch": "mocha --watch",
     "test": "mocha"
   },
-  "keywords": [],
   "author": "Rory Kermack ",
   "license": "MIT",
   "config": {
@@ -80,6 +79,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "eslint-plugin-import": "^2.0.1",
-    "react-addons-shallow-compare": "^15.3.2"
+    "react-addons-shallow-compare": "^15.3.2",
+    "react-dom": "^15.5.4"
   }
 }

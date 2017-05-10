@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactAddonsShallowCompare = require('react-addons-shallow-compare');
+
+var _reactAddonsShallowCompare2 = _interopRequireDefault(_reactAddonsShallowCompare);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -31,13 +35,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Accordion = function (_React$Component) {
   _inherits(Accordion, _React$Component);
 
-  // static propTypes = {
-  //   openByDefault: PropTypes.bool,
-  //   singleOpen: PropTypes.bool,
-  //   uniqId: PropTypes.string,
-  //   className: PropTypes.string,
-  // }
-
   function Accordion(props) {
     _classCallCheck(this, Accordion);
 
@@ -53,6 +50,12 @@ var Accordion = function (_React$Component) {
   }
 
   _createClass(Accordion, [{
+    key: 'toggleSection',
+    value: function toggleSection(sectionId) {
+      var newActive = Utils.toggleSection(sectionId, this.state.activeSections, this.state.singleOpen);
+      this.setState({ activeSections: newActive });
+    }
+  }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
       var _props = this.props,
@@ -62,22 +65,20 @@ var Accordion = function (_React$Component) {
           children = _props.children;
 
 
-      var settings = {
-        singleOpen: singleOpen,
-        openByDefault: openByDefault,
-        uniqId: uniqId,
-        kids: children
-      };
-
-      var initialStateSections = Utils.setupAccordion(settings).activeSections;
-      this.setState({ activeSections: initialStateSections });
+      var settings = { singleOpen: singleOpen, openByDefault: openByDefault, uniqId: uniqId, kids: children };
+      var initialState_sections = Utils.setupAccordion(settings).activeSections;
+      this.setState({ activeSections: initialState_sections });
     }
   }, {
     key: 'getChildrenWithProps',
     value: function getChildrenWithProps() {
       var _this2 = this;
 
-      var children = this.props.children;
+      var _props2 = this.props,
+          children = _props2.children,
+          uniqId = _props2.uniqId,
+          openByDefault = _props2.openByDefault,
+          singleOpen = _props2.singleOpen;
 
 
       var kids = _react2.default.Children.map(children, function (child, i) {
@@ -88,36 +89,23 @@ var Accordion = function (_React$Component) {
           },
           key: unqId,
           unq: unqId,
-          active: _this2.state.activeSections && _this2.state.activeSections.lastIndexOf(unqId) !== -1
+          active: _this2.state.activeSections && _this2.state.activeSections.lastIndexOf(unqId) != -1
         });
       });
 
       return kids;
     }
   }, {
-    key: 'toggleSection',
-    value: function toggleSection(sectionId) {
-      var newActive = Utils.toggleSection(sectionId, this.state.activeSections, this.state.singleOpen);
-
-      this.setState({
-        activeSections: newActive
-      });
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props,
-          propClasses = _props2.className,
-          propId = _props2.uniqId;
-
+      var propClasses = this.props.className;
 
       var childrenWithProps = this.getChildrenWithProps();
       var accordionClasses = (0, _classnames2.default)('react-accordion', propClasses);
-      var uniqId = propId || '';
 
       return _react2.default.createElement(
         'div',
-        { className: accordionClasses, id: uniqId },
+        { className: accordionClasses },
         childrenWithProps
       );
     }

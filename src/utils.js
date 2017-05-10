@@ -28,17 +28,19 @@ export function toggleSection(sectionId, activeSections, singleOpen) {
 export function setupAccordion(info) {
   const singleOpen = (checkUndef(info.singleOpen)) ? info.singleOpen : false;
   const activeSections = [];
+  const singleChild = typeof info.kids.length === 'undefined';
 
-  info.kids.forEach((child, i) => {
-    const { openByDefault } = child.props;
-    if (singleOpen && activeSections.length === 0 && openByDefault) {
-      activeSections.push(`acc-sec-${i}`);
-    }
-
-    if (!singleOpen && openByDefault) {
-      activeSections.push(`acc-sec-${i}`);
-    }
-  });
+  if (!singleChild) {
+    info.kids.forEach((child, i) => {
+      const { openByDefault } = child.props;
+      if (singleOpen && activeSections.length === 0 && openByDefault) {
+        activeSections.push(`acc-sec-${i}`);
+      }
+      if (!singleOpen && openByDefault) {
+        activeSections.push(`acc-sec-${i}`);
+      }
+    });
+  }
 
   return {
     activeSections,

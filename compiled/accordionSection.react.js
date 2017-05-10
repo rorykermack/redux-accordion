@@ -69,9 +69,9 @@ var AccordionSection = function (_React$Component) {
   }, {
     key: 'toggleSection',
     value: function toggleSection() {
-      var _props = this.props;
-      var unq = _props.unq;
-      var toggle = _props.toggle;
+      var _props = this.props,
+          unq = _props.unq,
+          toggle = _props.toggle;
 
       toggle(unq);
     }
@@ -88,11 +88,11 @@ var AccordionSection = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var title = _props2.title;
-      var children = _props2.children;
-      var active = _props2.active;
-      var propClasses = _props2.className;
+      var _props2 = this.props,
+          title = _props2.title,
+          children = _props2.children,
+          active = _props2.active,
+          propClasses = _props2.className;
 
 
       var contentStyles = {
