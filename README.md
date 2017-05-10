@@ -72,7 +72,7 @@ With the local component state option you can simply run ```npm install redux-ac
 
 
 ## Contributing
-It doesn't matter if you're a veteran or not. Everyone brings something awesome to the party so please contribute.
+Everyone brings something awesome to the party so please contribute.
 If you have any suggestions give a shout on twitter to [@reduxAccordion](https://twitter.com/@reduxAccordion) <br/>
 1. Fork it! <br/>
 2. Create your feature branch: `git checkout -b my-new-feature` <br/>

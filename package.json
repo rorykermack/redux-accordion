@@ -21,7 +21,7 @@
   "license": "MIT",
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "",
       "pre-push": "npm run clean"
     }
   },
